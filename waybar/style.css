@@ -1,24 +1,23 @@
 @import 'colors.css';
 
 * {
-  margin: 2px;
   border: none;
-  font-family: 'ShureTechMono Nerd Font Propo';
+  font-family: 'BigBlueTerm437 Nerd Font Mono', monospace;
   font-weight: bold;
   font-size: 1rem;
 }
 
 window#waybar {
-  background: @surface;
+  background: transparent;
   color: @on_surface;
-  border: 3px solid @outline;
 }
 
 tooltip {
   background: @background;
   border: 1px solid @on_primary_container;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 5px 10px;
+
 }
 tooltip label {
   color: @on_surface;
@@ -27,8 +26,9 @@ tooltip label {
 #workspaces button {
   color: @on_primary_container;
   padding: 0 6px;
-  border: 4px solid @on_primary_container;
+  border: 1px solid @on_primary_container;
   background: @surface;
+  margin: 0 5px;
 }
 
 #workspaces button.active {
@@ -47,10 +47,11 @@ tooltip label {
 #clock,
 #pulseaudio,
 #network {
-  border: 4px solid @on_primary_container;
+  border: 1px solid @on_primary_container;
   border-radius: 5px;
   padding: 0 15px;
   background-color: @surface;
+  margin: 0 5px;
 }
 
 #clock:hover,

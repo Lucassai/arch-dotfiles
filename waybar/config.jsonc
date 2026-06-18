@@ -1,11 +1,13 @@
 {
   "layer": "top",
-  "modules-left": ["wlr/taskbar"],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio", "network", "clock"],
+  "modules-left": ["hyprland/workspaces","tray"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "network"],
 
   "clock": {
     "format": "{:%H:%M %a %d/%m}",
+    "locale": "pt_BR.UTF-8",
+    "lang": "pt_BR",
     "interval": 1,
     "max-length": 30,
     "rotate": 0,
@@ -21,21 +23,20 @@
     }
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "ᛦ",
-      "2": "ᛦ",
-      "3": "ᛦ",
-      "4": "ᛦ"
-    },
+    "format": "{name}",
     "persistent-workspaces": {
-      "HDMI-A-1": [1, 2],
-      "DP-1": [3, 4]
+      "DP-1": [1, 2],
+      "HDMI-A-1": [3, 4],
     }
   },
 
-  "pulseaudio": {
-    "format": "{volume}%",
+  "tray": {
+    "icon-size": 20,
+    "spacing": 4,
+    "rotate": 0
+},
+"pulseaudio": {
+    "format":  "{icon} {volume}%",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "",
     "format-icons": {
@@ -51,10 +52,9 @@
       "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol",
+    "on-click": "~/.local/bin/toggle-volctl",
     "ignored-sinks": ["Easy Effects Sink"]
   },
-
   "network": {
     "tooltip": true,
     "rotate": 0,
